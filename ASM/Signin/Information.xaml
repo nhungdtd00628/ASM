@@ -1,0 +1,57 @@
+﻿<Page
+    x:Class="ASM.Signin.Information"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ASM.Signin"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/anh7.jpg" Opacity="1" Stretch="UniformToFill" />
+        </Grid.Background>
+        <ScrollViewer>
+            <StackPanel>
+              
+                        <Image x:Name="AvatarInfor" Width="200" Height="200" Margin="50,30,0,30" HorizontalAlignment="Left"/>
+                 
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="500"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+            <TextBlock x:Name="UserNameInfor" Grid.Column="0" Grid.Row="0"  Margin="50,20,20,10" Width="100"/>
+            <TextBlock x:Name="userNameInfor" Grid.Column="1" Grid.Row="0"  Margin="50,20,20,10"/>
+                    <TextBlock x:Name="EmailInfor" Grid.Column="0" Grid.Row="1" Margin="50,20,20,10" Width="100"/>
+                    <TextBlock x:Name="emailInfor" Grid.Column="1" Grid.Row="1" Margin="50,20,20,10"/>
+                    <TextBlock x:Name="PasswordInfor" Grid.Column="0" Grid.Row="2"  Margin="50,20,20,10" Width="100"/>
+                    <TextBlock x:Name="passwordInfor" Grid.Column="1" Grid.Row="2"  Margin="50,20,20,10"/>
+                    <TextBlock x:Name="PhoneInfor" Grid.Column="0" Grid.Row="3"  Margin="50,20,20,10" Width="100"/>
+                    <TextBlock x:Name="phoneInfor" Grid.Column="1" Grid.Row="3"  Margin="50,20,20,10"/>
+                    <TextBlock x:Name="GenderInfor" Grid.Column="0" Grid.Row="4"  Margin="50,20,20,10" Width="100"/>
+                    <TextBlock x:Name="genderInfor" Grid.Column="1" Grid.Row="4"  Margin="50,20,20,10"/>
+                    <TextBlock x:Name="DateInfor" Grid.Column="0" Grid.Row="5"  Margin="50,20,20,10" Width="100"/>
+                    <TextBlock x:Name="dateInfor" Grid.Column="1" Grid.Row="5"  Margin="50,20,20,10"/>
+                    <TextBlock x:Name="AddressInfor" Grid.Column="0" Grid.Row="6"   Margin="50,20,20,10" Width="100"/>
+                    <TextBlock x:Name="addressInfor" Grid.Column="1" Grid.Row="6"  Margin="50,20,20,10"/>
+                    <TextBlock x:Name="IntroductionInfor" Grid.Column="0" Grid.Row="7"   Margin="50,20,20,10" Width="100"/>
+                    <TextBlock x:Name="introductionInfor" Grid.Column="1" Grid.Row="7"  Margin="50,20,20,10"/>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

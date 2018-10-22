@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="ASM.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ASM"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/anh3.jpg" Opacity="1" Stretch="UniformToFill" />
+        </Grid.Background>
+        <NavigationView x:ConnectionId='2' x:Name="NavView"                                             Header="Wellcom" AlwaysShowHeader="False">
+            <NavigationView.MenuItems>
+                <NavigationViewItemHeader Content="Menu"/>
+                <NavigationViewItem Icon="contact" Content="Registration" Tag="registration" />
+                <NavigationViewItem Icon="Contact2" Content="Sign in" Tag="signin" />
+                <NavigationViewItem Icon="Add" Content="Information" Tag="information" />
+                <NavigationViewItemSeparator/>
+                <NavigationViewItemHeader Content="MP3"/>
+                <NavigationViewItem Icon="Audio" Content="ListSong" Tag="listsong"/>
+            </NavigationView.MenuItems>
+            <Frame x:ConnectionId='3' x:Name="ContentFrame">
+                <Frame.ContentTransitions>
+                    <TransitionCollection>
+                        <NavigationThemeTransition/>
+                    </TransitionCollection>
+                </Frame.ContentTransitions>
+            </Frame>
+        </NavigationView>
+        
+    </Grid>
+</Page>
+

@@ -1,0 +1,90 @@
+﻿<Page
+    x:Class="ASM.Signup.SignUp"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ASM.Signup"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/anh5.jpg" Opacity="1" Stretch="UniformToFill" />
+        </Grid.Background>
+        <ScrollViewer>
+            <StackPanel>
+                <TextBlock HorizontalAlignment="Center" Margin="0,5,0,0" > <Bold>SignUp</Bold></TextBlock>
+                <TextBlock Text="______________________________________________" TextAlignment="Center"/>
+                <Grid Margin="30,0,10,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="500"/>
+                        <ColumnDefinition Width="500"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBox x:Name="FirstName" Text="{x:Bind currentMember.firstName,Mode=TwoWay}" Header="FirstName" Grid.Row="0" Grid.Column="0" Margin="10,30,0,0"/>
+                    <TextBlock x:Name="firstName" Foreground="Red" Visibility="Collapsed" Grid.Row="1" Grid.Column="0" Margin="10,0,0,0"/>
+                    <TextBox x:Name="LastName" Text="{x:Bind currentMember.lastName,Mode=TwoWay}" Header="LastName" Grid.Row="0" Grid.Column="1"  Margin="20,30,0,0"/>
+                    <TextBlock x:Name="lastName" Foreground="Red" Visibility="Collapsed" Grid.Row="1" Grid.Column="1" Margin="10,0,0,0"/>
+                    <PasswordBox x:Name="Password" Password="{x:Bind currentMember.password,Mode=TwoWay}" Header="Password" Grid.Row="2" Grid.Column="0" Margin="10,0,0,0"/>
+                    <TextBlock x:Name="password" Foreground="Red" Visibility="Collapsed" Grid.Row="3" Grid.Column="0" Margin="10,0,0,0"/>
+                    <TextBox x:Name="Email"  Header="Email" Text="{x:Bind currentMember.email,Mode=TwoWay}" Grid.Row="2" Grid.Column="1" Margin="20,0,0,0"/>
+                    <TextBlock x:Name="email" Foreground="Red" Visibility="Collapsed" Grid.Row="3" Grid.Column="1" Margin="10,0,0,0"/>
+                    <TextBox x:Name="Phone" Text="{x:Bind currentMember.phone,Mode=TwoWay}" Header="Phone Number" Grid.Row="4" Grid.Column="0" Margin="10,0,0,0"/>
+                    <TextBlock x:Name="phone" Foreground="Red" Visibility="Collapsed" Grid.Row="5" Grid.Column="0" Margin="10,0,0,0"/>
+                    <CalendarDatePicker x:Name="Birthday" Header="Birthday" DateChanged="Birthday_DateChanged" Grid.Row="4" Grid.Column="1" Margin=" 20,0,0,0"/>
+                    <TextBlock x:Name="birthday" Foreground="Red" Visibility="Collapsed" Grid.Row="5" Grid.Column="1" Margin="20,30,0,0"/>
+                </Grid>
+                <Grid Margin="30,5,10,0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="320"/>
+                        <ColumnDefinition Width="610"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Gender" Grid.Row="0" Grid.Column="0" Margin="0,30,0,0" />
+                    <StackPanel Orientation="Horizontal" Margin="0,20,0,0" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <RadioButton Content="Male" Tag="1" Checked="RadioButton_Checked"/>
+                        <RadioButton Content="Female" Tag="0" Checked="RadioButton_Checked" />
+                        <RadioButton Content="Other" Tag="2" IsChecked="True" Checked="RadioButton_Checked"  />
+                    </StackPanel>
+                    <TextBox x:Name="AvatarUrl" Text="{x:Bind currentMember.avatar,Mode=TwoWay}" Header="Avatar Link" Grid.Row="0" Grid.Column="2" Margin="140,0,0,0"/>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="525"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="300"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition Height="*"/>
+
+                    </Grid.RowDefinitions>
+                    <TextBox x:Name="Address" Header="Address" Margin="30,0,0,0" Grid.Row="0" Grid.Column="0"  Height="150"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    <TextBlock x:Name="address" Foreground="Red" Margin="30,0,0,0" Visibility="Collapsed" Grid.Column="0" Grid.Row="1" />
+                    <Image x:Name="Avatar" Height="200"  Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="300" Margin="0,5,0,0"/>
+                    <Button Content="Capture Your Photo" Margin="30,75,0,0" Click="Choose_Image" Grid.Row="0" Grid.Column="1" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="avatar" Visibility="Collapsed" Foreground="Red" Grid.Column="1" Grid.Row="1" Margin="30,0,0,0"/>
+                </Grid>
+                <Grid Margin="30,5,10,0" Height="100">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="500"/>
+                        <ColumnDefinition Width="500"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="Introduction" Header="Introduction" AcceptsReturn="True"  Grid.Column="0"  Height="100"/>
+                    <StackPanel Orientation="Horizontal"  Grid.Column="1" Grid.Row="0">
+                        <Button Content="Submit" Background="AliceBlue"   Click="Submit_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Margin="10,60,10,0" Height="32"/>
+                        <Button Content="Reset" Background="AliceBlue" Click="Reset_Click" Width="100"  Height="32" Margin="5,50,10,0"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
